@@ -1,8 +1,8 @@
 #set("content") {
     <h1>Users</h1>
     #if(users) {
-    <table>
-        <thead>
+    <table class="table table-bordered table-hover">
+        <thead class="thead-light">
             <tr>
                 <th> Name </th>
                 <th> Username </th>
