@@ -6,13 +6,15 @@ import Fluent
 ///
 /// [Learn More →](https://docs.vapor.codes/3.0/getting-started/structure/#routesswift)
 public func routes(_ router: Router) throws {
-    // Basic "Hello, world!" example
-    router.get("hello") { req in
-        return "Hello, world!"
+    router.get("hello") { req -> Future<View> in
+        return try req.view().render("hello", ["name": "hello"])
     }
     
     let usersController = UsersController()
     try router.register(collection: usersController)
     
+    let websiteController = WebsiteController()
+    try router.register(collection: websiteController)
+
 }
 

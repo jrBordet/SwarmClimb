@@ -1,0 +1,29 @@
+#set("content") {
+    <h1>Users</h1>
+    #if(users) {
+    <table>
+        <thead>
+            <tr>
+                <th> Name </th>
+                <th> Username </th>
+            </tr>
+        </thead>
+        <tbody>
+            #for(user in users) {
+            <tr>
+                <td>
+                    <a href="/users/#(user.id)">
+                        #(user.name)
+                    </a>
+                </td>
+            <td>#(user.username)</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    } else {
+        <h2>There aren't any users yet!</h2>
+    }
+}
+
+#embed("base")
